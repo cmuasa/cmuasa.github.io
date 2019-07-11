@@ -8,7 +8,7 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .text-muted {
-  color: #9C0000;
+  color: #777777;
 }
 .text-primary {
   color: #9C0000;
@@ -161,7 +161,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom {
   background-color: #222222;
-  border-color: #9C0000;
+  border-color: transparent;
 }
 .navbar-custom .navbar-brand {
   color: #9C0000;
@@ -193,7 +193,7 @@ fieldset[disabled] .btn-xl.active {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: black;
+  color: white;
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
@@ -212,7 +212,7 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    background-color: #9C0000;
+    background-color: transparent;
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
