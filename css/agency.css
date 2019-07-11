@@ -280,6 +280,7 @@ header .intro-text .intro-heading {
     font-size: 22px;
     line-height: 40px;
     margin-bottom: 25px;
+    color: #9C0000
   }
   header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -288,6 +289,7 @@ header .intro-text .intro-heading {
     font-size: 75px;
     line-height: 75px;
     margin-bottom: 50px;
+    color: #9C0000
   }
 }
 section {
