@@ -224,7 +224,7 @@ section h3.section-subheading {
 /* Header style */
 
 header {
-    margin-top: 5rem;
+    margin-top: 2rem;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgb(255, 255, 255, .3) 100%), url("../img/fence.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -253,7 +253,7 @@ header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 50px;
     margin-bottom: 25px;
 }
