@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&display=swap');
+.App {
+  text-align: center;
+  border: solid 3px #9C0000;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.title {
+  border: solid 3px grey;
+  margin: 2rem 5rem;
+  background: white;
+  border-radius: 7.5px;
+}
+
+.asa {
+  font-family: 'Amatic SC', cursive;
+  font-size: 68px;
+  font-weight: bold;
+}
+
+a {
+  font-weight: bold;
+  color: #9C0000;
+}
+
+a:hover{
+  font-weight: bold;
+  color: #9C0000;
+}
+
+.red {
+  color: #9C0000;
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+}
+
+.square {
+  border: 2px solid black;
+  background: #fee;
+  min-height: 180px;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+  font-family: 'Indie Flower', cursive;
+  font-size: 16px;
+}
+
+textarea {
+  max-width: 100%;
+  text-align: center;
+  overflow: scroll;
+}
+
+.clicked {
+  background: #faa
+}
+
+.clicked p {
+  text-decoration: line-through;
+}
+
+@media(max-width: 650px) {
+  .App {
+    margin: 0;
+  }
+  .square {
+    font-size: 10px;
+    min-height: 150px;
+    height: 150px;
+    border: 1px solid black;
+  }
+
+  .title {
+    margin: 0;
+    border: none;
+    background: transparent;
+  }
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: #9C0000;
+  color: white;
+}
+
+::selection {
+  text-shadow: none;
+  background: #9C0000;
+  color: white;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
