@@ -15,30 +15,30 @@ function shuffle(a) {
 	return a;
 }
 var vals = [
-	'can speak and read another language',
-	'has an awful sleeping schedule',
-	'is lactose intolerant',
-	'plays an instrument (what instrument?)',
-	'has painted the fence (with what org?)',
-	'is involved in Greek life (what org)',
-	'got tested for corona',
-	'learned a tiktok dance in quarantine',
-	'has been to 5+ raves/music festivals',
-	'was born outside of the US (where?)',
-	'has worn colored contacts AND falsies',
-	'started a new project or hobby in quarantine',
-	'dances often',
-	'had big plans cancelled b/c of corona (what plans?)',
-	'plays a sport (what sport?)',
-	'had a mushroom haircut as a kid',
-	'watches anime or kdramas (favorite?)',
-	'dyed your hair or got bangs in quarantine',
-	'has their name mispronounced often',
-	'baked/cooked something new in quarantine',
-	'has a pet (what pet?)',
-	'excited about the fall semester (which part?)',
-	'nervous or sad about the fall semester (which part?)',
-	'has had bubble tea 3+ days in a row before',
+	'Can speak and read another language',
+	'Has an awful sleeping schedule',
+	'Is lactose intolerant',
+	'Plays an instrument (what instrument?)',
+	'Has painted the fence (with what org?)',
+	'Is involved in Greek life (what org?)',
+	'Got tested for corona',
+	'Learned a tiktok dance in quarantine',
+	'Has been to 5+ raves/music festivals',
+	'Was born outside of the US (where?)',
+	'Gas worn colored contacts AND falsies',
+	'Started a new project or hobby in quarantine',
+	'Dances often',
+	'Had big plans cancelled b/c of corona (what plans?)',
+	'Plays a sport (what sport?)',
+	'Had a mushroom haircut as a kid',
+	'Watches anime or kdramas (favorite?)',
+	'Dyed your hair or got bangs in quarantine',
+	'Has their name mispronounced often',
+	'Baked/cooked something new in quarantine',
+	'Has a pet (what pet?)',
+	'Excited about the fall semester (which part?)',
+	'Nervous or sad about the fall semester (which part?)',
+	'Has had bubble tea 3+ days in a row before',
 ];
 shuffle(vals);
 
@@ -47,23 +47,33 @@ class Square extends React.Component {
 		super(props);
 		this.state = { clicked: false };
 		this.handleClick = this.handleClick.bind(this);
+
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleClick() {
-		this.setState({ clicked: !this.state.clicked });
+		if (this.state.clicked === true) {
+			this.setState({ clicked: false });
+		}
+	}
+
+	handleChange() {
+		this.setState({ clicked: true });
 	}
 
 	render() {
 		if (this.state.clicked === false) {
 			return (
-				<Col className="square px-1" onClick={this.handleClick}>
+				<Col className="d-flex flex-column square px-1">
 					<p>{this.props.val}</p>
+					<textarea rows="2" placeholder="(names)" onChange={this.handleChange}></textarea>
 				</Col>
 			);
 		} else {
 			return (
-				<Col className="square clicked px-1" onClick={this.handleClick}>
+				<Col className="d-flex flex-column square clicked px-1" onClick={this.handleClick}>
 					<p>{this.props.val}</p>
+					<textarea rows="2" placeholder="(names)" onChange={this.handleChange}></textarea>
 				</Col>
 			);
 		}
@@ -100,9 +110,12 @@ class BingoRow extends React.Component {
 export class App extends React.Component {
 	render() {
 		return (
-			<div className="App container text-center mb-5">
-				<h1>ASA Orientation Bingo</h1>
-				<p>Try to find someone that's described by each box!</p>
+			<div className="App container text-center my-sm-3">
+				<div className="title">
+					<h1 className="asa">ASA Orientation Bingo</h1>
+					<p>Try to find someone that's described by each box!</p>
+					<p>Fill out the Check-in Form for our Contact Sheet!</p>
+				</div>
 				<Container>
 					<BingoRow rowNum={0} />
 					<BingoRow rowNum={1} />
@@ -110,6 +123,8 @@ export class App extends React.Component {
 					<BingoRow rowNum={3} />
 					<BingoRow rowNum={4} />
 				</Container>
+				<button className="btn btn-dark m-3">New Board</button>
+				<button className="btn btn-dark m-3">Clear Board</button>
 			</div>
 		);
 	}

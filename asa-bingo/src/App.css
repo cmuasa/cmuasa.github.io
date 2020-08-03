@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&display=swap');
 .App {
   text-align: center;
+  border: solid 3px #9C0000;
+  background: #fffafa;
+}
+
+.title {
+  border: solid 3px grey;
+  margin: 2rem 5rem;
+  background: white;
 }
 
 .App-logo {
@@ -37,6 +46,17 @@
   }
 }
 
+.asa {
+  font-family: 'Amatic SC', cursive;
+  font-size: 68px;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+}
+
 .square {
   border: 2px solid black;
   background: #fee;
@@ -47,17 +67,52 @@
   /* align horizontal */
   align-items: center;
   /* align vertical */
+  font-family: 'Indie Flower', cursive;
+  font-size: 16px;
 }
 
+textarea {
+  max-width: 100%;
+}
 
 .clicked {
-  text-decoration: line-through;
   background: #faa
 }
 
+.clicked p {
+  text-decoration: line-through;
+}
+
 @media(max-width: 650px) {
-  .square {
-    font-size: 9px;
-    height: 100px
+  .App {
+    margin: 0;
   }
+  .square {
+    font-size: 10px;
+    height: 150px
+  }
+
+  .title {
+    margin: 2rem;
+    border: none;
+    background: transparent;
+  }
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: #9C0000;
+}
+
+::selection {
+  text-shadow: none;
+  background: #9C0000;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
 }
