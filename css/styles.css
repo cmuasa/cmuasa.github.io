@@ -75,11 +75,13 @@ h1, h2, h3, h4, h5, h6 {
 ::-moz-selection {
     text-shadow: none;
     background: #9C0000;
+    color: white;
 }
 
 ::selection {
     text-shadow: none;
     background: #9C0000;
+    color: white;
 }
 
 img::selection {
@@ -140,8 +142,8 @@ section h3.section-subheading {
 /* Navigation Styling*/
 
 #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
     background-color: #eee;
 }
 
