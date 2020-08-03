@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   border: solid 3px #9C0000;
-  background: #fffafa;
+  background: #f1f1f1;
 }
 
 .title {
@@ -93,7 +93,7 @@ textarea {
   }
 
   .title {
-    margin: 2rem;
+    margin: 0;
     border: none;
     background: transparent;
   }
