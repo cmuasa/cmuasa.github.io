@@ -39,4 +39,8 @@ label, h4, h6 {
       background: transparent;
       margin-bottom: 2rem;
     }
+
+    .asa {
+        font-size: 48px;
+    }
   }
