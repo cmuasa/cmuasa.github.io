@@ -64,6 +64,6 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 }
 
 function td(item) {
-	return '<td>' + item + '</td>';
+	return '<td style="font-size:14px; vertical-align:middle">' + item + '</td>';
 }
 

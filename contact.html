@@ -44,7 +44,7 @@
     <style>
         .thumbnail {
             border-radius: 50%;
-            height: 50px;
+            height: 40px;
         }
 
         td a {
@@ -61,33 +61,37 @@
             box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2) !important
         }
 
-        html,
-        body {
-            overflow-x: hidden;
+        .table-hover tbody tr:hover td,
+        .table-hover tbody tr:hover th {
+            background-color: #fdd;
         }
 
+        .redColor {
+            color: #9C0000;
+        }
     </style>
 </head>
 
 
-<body>
-
-    <div class="container text-center">
-        <div class="title">
-            <h1 class="asa">Thank you for filling out our checkin form!</h1>
-            <h6>Find some friends below!</h6>
-            <h6>Stick around for some fun <a href="bingo.html" target="_blank">bingo</a> and check out our <a href="./"
-                    target="_blank">website</a> for more information!</h6>
-            <h6>(best viewed on desktop)</h6>
+<body class="">
+    <div class="form mx-sm-2 my-sm-3">
+        <div class="container text-center">
+            <div class="title">
+                <h1 class="asa"><span class="redColor">Thank you</span> for filling out our checkin form!</h1>
+                <h6>Find some friends below!</h6>
+                <h6>Stick around for some fun <a href="bingo.html" target="_blank">bingo</a> and check out our <a
+                        href="./" target="_blank">website</a> for more information!</h6>
+                <h6>(best viewed on desktop)</h6>
+            </div>
         </div>
         <br>
         <!-- Table  -->
-        <div style="overflow-x: auto;"> 
-            <table class="table table bordered table-striped" id="testTable">
+        <div class="mx-1 mx-sm-5" style="overflow-x: auto;">
+            <table class="bordered table-striped table table-hover" id="testTable">
                 <!-- Table head -->
                 <thead>
                     <tr>
-                        <th style="width:50px"></th>
+                        <th style="width:auto"></th>
                         <th>Name</th>
                         <th>Year</th>
                         <th>Major</th>
@@ -106,8 +110,8 @@
             </table>
             <!-- Table  -->
         </div>
-    </div>
 
+    </div>
 
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
