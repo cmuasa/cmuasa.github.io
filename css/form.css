@@ -28,3 +28,15 @@ label, h4, h6 {
     font-family: 'Quicksand', sans-serif;
     text-transform: none;
 }
+
+@media(max-width: 650px) {
+    .App {
+      margin: 0;
+    }
+    .title {
+      margin: 0;
+      border: none;
+      background: transparent;
+      margin-bottom: 2rem;
+    }
+  }
