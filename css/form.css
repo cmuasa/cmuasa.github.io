@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Architects+Daughter&family=Indie+Flower&family=Quicksand&display=swap');
+.form {
+    text-align: center;
+    border: solid 3px #9C0000;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+}
+
+.title {
+    border: solid 3px grey;
+    margin: 2rem 5rem;
+    background: white;
+    border-radius: 7.5px;
+}
+
+.asa {
+    font-family: 'Amatic SC', cursive;
+    font-size: 68px;
+    font-weight: bold;
+}
+
+p, h6 {
+    font-family: 'Architects Daughter', cursive;
+}
+
+label {
+    font-family: 'Quicksand', sans-serif;
+}

@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="refresh" content="0; URL=https://docs.google.com/forms/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/viewform" />
     <!--
+    <meta http-equiv="refresh" content="0; URL=https://docs.google.com/forms/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/viewform" />
+    
         Google Forms Link: https://docs.google.com/forms/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/viewform
 
     -->
@@ -14,7 +15,7 @@
     <meta name="author" content="" />
     <link rel="icon" href="/img/favicon.png" />
 
-    <title>ASA Bingo!</title>
+    <title>ASA Orientation Checkin!</title>
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="CMU Asian Students Association" />
@@ -23,19 +24,105 @@
         content="Carnegie Mellon University Asian Students Association, better known as CMU ASA, the largest cultural student organization on campus." />
     <meta property="og:image" content="https://i.ibb.co/3WBPLnq/asa.jpg" />
 
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Theme CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+
+
     <style>
         object {
             width: 100vw;
             height: 100vh;
             overflow: hidden;
         }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
+<!--
+    Form action: action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/formResponse"
+    entry.942361412 - Name
+    entry.248305635 - Andrew
+    entry.718733056 - Year
+    entry.1231867167 - Major
+    entry.767219120 - Fact
+    entry.532209718 - Phone Number
+    entry.1582317946 - Instagram
+    entry.782707836 - Socials
+    entry.642546034 - Excite
+    entry.1381591057 - Worry
+-->
+
 <body>
+
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='contact.html';}"></iframe>
+
+
+    <!---->
+
+    <div class="container my-3 form">
+        <div class="title">
+            <h1 class="text-center asa"><a href="http://www.cmuasa.org/" target="_blank">ASA</a> Orientation Checkin!
+            </h1>
+            <h6>Welcome to CMU Asian Students Association's Orientation Event!</h6>
+            <h6>Fill out this form to be added to our contact info page</h6>
+        </div>
+
+        <form class=""
+            action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/formResponse"
+            method="post" target="hidden_iframe"  onsubmit="submitted=true;">
+
+            <label>Name:* </label><br>
+            <input name="entry.942361412" type="text" required />
+            <br>
+            <label>Andrew ID:* </label><br>
+            <input name="entry.248305635" type="text" required />
+            <br>
+            <label>Class:* </label>
+            <br>
+            <label>Freshman</label><input name="entry.718733056" type="radio" value="Freshman" name="Freshman"
+                required />
+            <label>Sophomore</label><input name="entry.718733056" type="radio" value="Sophomore" name="Sophomore" />
+            <label>Junior</label><input name="entry.718733056" type="radio" value="Junior" name="Junior" />
+            <label>Senior</label><input name="entry.718733056" type="radio" value="Senior" name="Senior" />
+            <br>
+            <label>Major:* </label><br>
+            <input name="entry.1231867167" type="text" required />
+            <br>
+            <label>A fun fact about yourself! </label>
+            <br><textarea name="entry.767219120" type="text"></textarea>
+            <br>
+            <label>Phone Number: </label><br>
+            <input name="entry.532209718" type="number"/>
+            <br>
+            <label>Instagram Handle (don't include @): </label><br>
+            <input name="entry.1582317946" type="text" />
+            <br>
+            <label>Other Social Handles: </label><br>
+            <input name="entry.782707836" type="text" />
+            <br>
+            <label>What are most excited about for the semester? </label>
+            <br><textarea name="entry.642546034" type="text"></textarea>
+            <br>
+            <label>What are most worried about for the semester? </label>
+            <br><textarea name="entry.1381591057" type="text"></textarea>
+            <br>
+            <br>
+            <input class="btn btn-dark" type="submit" value="Send" />
+            <input type="hidden" name="redirect" value="contact.html">
+        </form>
+        <a href="http://cmuasa.org/bingo" target="_blank">Bingo!</a>
+    </div>
 
 </body>
