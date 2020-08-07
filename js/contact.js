@@ -81,7 +81,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 	let photo;
 
 	if (socials) {
-		socials = `<li>Other Socials: ${socials} </li>`;
+		socials = `<li><span class="font-weight-bold">Other Socials</span>: ${socials} </li>`;
 	} else {
 		socials = '';
 	}
@@ -105,11 +105,11 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 						</div>
 						<div class="card-body col-xl-8 p-0">
 							<p class="card-text m-0">
-								<li class="text-center">"${fact}" </li>
-								<li>Class: ${year} </li>
-								<li>Major: ${major} </li>
-								<li>Insta: <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
-								<li>Phone: ${phone} </li>
+								<li class="fact">"${fact}" </li>
+								<li><span class="font-weight-bold"> Class:</span> ${year} </li>
+								<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+								<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
+								<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
 									${socials}
 							</p>
 						</div>
@@ -126,11 +126,11 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 							<h5 class="card-title m-0 my-3 mb-xl-1">${name}</h5>
 						</a>
 						<p class="card-text m-0">
-							<li>"${fact}" </li>
-							<li>Class: ${year} </li>
-							<li>Major: ${major} </li>
-							<li>Insta: <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
-							<li>Phone: ${phone} </li>
+							<li class="fact">"${fact}" </li>
+							<li><span class="font-weight-bold">Class:</span> ${year} </li>
+							<li><span class="font-weight-bold">Major:</span> ${major} </li>
+							<li><span class="font-weight-bold">Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
+							<li><span class="font-weight-bold">Phone:</span> ${phone} </li>
 							${socials}
 						</p>
 					</div>
@@ -144,10 +144,10 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 				<div class="card-body p-1">
 					<h5 class="card-title m-0 my-3 mb-xl-1">${name}</h5>
 				<p class="card-text m-0">
-					<li>"${fact}" </li>
-					<li>Class: ${year} </li>
-					<li>Major: ${major} </li>
-					<li>Phone: ${phone} </li>
+					<li class="fact">"${fact}" </li>
+					<li><span class="font-weight-bold">Class:</span> ${year} </li>
+					<li><span class="font-weight-bold">Major:</span> ${major} </li>
+					<li><span class="font-weight-bold">Phone:</span> ${phone} </li>
 					${socials}
 				</p>
 			</div>
