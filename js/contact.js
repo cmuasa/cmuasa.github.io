@@ -3,7 +3,6 @@ $.getJSON(
 	function (data) {
 		var localStorage = window.localStorage;
 		var today = (new Date() + "").toString();
-		
 		// clear local storage if not visited on the same day
 		if (localStorage.getItem('time')) {
 			console.log(`Last visited ${localStorage.getItem("time").slice(0, 10)}`)
