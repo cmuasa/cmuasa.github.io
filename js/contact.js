@@ -12,7 +12,7 @@ $.getJSON(
 				.done(function (data) {
 					// try to access instagram
 					try {
-						let photoURL = data['graphql']['user']['profile_pic_url_hd'];
+						let tmp = data['graphql']['user']['profile_pic_url_hd'];
 						// able to access, and clearing storage
 						console.log("local storage cleared")
 						localStorage.clear();
