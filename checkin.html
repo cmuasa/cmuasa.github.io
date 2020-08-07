@@ -34,6 +34,25 @@
     <link href="css/form.css" rel="stylesheet" />
 
 
+    <style>
+        label {
+            margin-top: 1rem;
+        }
+
+        input, textarea {
+            max-width: 80%;
+            width: 20rem;
+        }
+
+        .radio {
+            width: auto;
+        }
+
+        .redText {
+            color: #C90000
+        }
+    </style>
+
 </head>
 
 <!--
@@ -71,29 +90,30 @@
             action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/formResponse"
             method="post" target="hidden_iframe" onsubmit="submitted=true;">
 
-            <label>Name:* </label><br>
+            <label>Full Name:<span class="redText">*</span> </label><br>
             <input name="entry.942361412" type="text" required />
             <br>
-            <label>Andrew ID:* </label><br>
+            <label>Andrew ID:<span class="redText">*</span> </label><br>
             <input name="entry.248305635" type="text" required />
             <br>
-            <label>Class:* </label>
+            <label>Class:<span class="redText">*</span> </label>
             <br>
-            <label>Freshman</label><input name="entry.718733056" type="radio" value="Freshman" name="Freshman"
-                required />
-            <label>Sophomore</label><input name="entry.718733056" type="radio" value="Sophomore" name="Sophomore" />
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Freshman" name="Freshman" required /> Freshman</label>&nbsp
+            &nbsp&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Sophomore" name="Sophomore" /> Sophomore</label>&nbsp
             <br>
-            <label>Junior</label><input name="entry.718733056" type="radio" value="Junior" name="Junior" />
-            <label>Senior</label><input name="entry.718733056" type="radio" value="Senior" name="Senior" />
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Junior" name="Junior" /> Junior</label>&nbsp
+            &nbsp&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Senior" name="Senior" /> Senior</label>&nbsp
             <br>
-            <label>Major:* </label><br>
+            <label>Major:<span class="redText">*</span> </label><br>
             <input name="entry.1231867167" type="text" required />
             <br>
-            <label>A fun fact about yourself! </label>
-            <br><textarea name="entry.767219120" type="text"></textarea>
+            <label>A fun fact about yourself!<span class="redText">*</span> </label>
+            <br><textarea name="entry.767219120" type="text" required></textarea>
             <br>
-            <label>Phone Number: </label><br>
-            <input name="entry.532209718" type="number" />
+            <label>Phone Number:<span class="redText">*</span> </label><br>
+            <input name="entry.532209718" type="number" required />
             <br>
             <label>Instagram Handle (don't include @): </label><br>
             <input name="entry.1582317946" type="text" />
@@ -108,6 +128,7 @@
             <br><textarea name="entry.1381591057" type="text"></textarea>
             <br>
             <br>
+            <label><span class="redText">*</span> = required</label><br>
             <input class="btn btn-dark" type="submit" value="Send" />
             <input type="hidden" name="redirect" value="contact.html">
         </form>

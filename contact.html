@@ -44,7 +44,12 @@
     <style>
         .thumbnail {
             border-radius: 50%;
-            height: 40px;
+            max-height: 100px;
+            max-width: 100px;
+        }
+        .card{
+            border-radius: 5%;
+            font-family: 'Quicksand', sans-serif;
         }
 
         td a {
@@ -70,6 +75,11 @@
             color: #9C0000;
         }
 
+        li {
+            list-style-type: none;
+            margin: 2px;
+        }
+
     </style>
 </head>
 
@@ -86,10 +96,9 @@
             </div>
         </div>
         <br>
-        <!-- Table  -->
+        <!-- Table  
         <div class="mx-1 mx-sm-5 my-0 py-0" style="overflow-x: auto;">
             <table class="bordered table-striped table table-hover" id="testTable">
-                <!-- Table head -->
                 <thead>
                     <tr>
                         <th style="width:auto"></th>
@@ -102,15 +111,19 @@
                         <th>Other Socials</th>
                     </tr>
                 </thead>
-                <!-- Table head -->
-                <!-- Table body -->
                 <tbody id="demo" class="align-self-center">
 
                 </tbody>
-                <!-- Table body -->
             </table>
-            <!-- Table  -->
         </div>
+        -->
+
+        <div class="container-fluid text-center px-sm-5">
+            <div class="row" id="contactInfo">
+            </div>
+        </div>
+
+
         <footer>
             <hr width="80%" />
             <p>&copy 2020 Phi Henry Nguyen</p>
