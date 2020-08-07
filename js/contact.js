@@ -1,6 +1,19 @@
 $.getJSON(
 	'https://spreadsheets.google.com/feeds/list/164sYoGTskq6Z8_oQGKHxt8Sk3cCUpp1BWATWdieOc-c/1/public/full?alt=json',
 	function (data) {
+		var localStorage = window.localStorage;
+		var today = (new Date() + "").toString();
+		
+		// clear local storage if not visited on the same day
+		if (localStorage.getItem('time')) {
+			console.log(`Last visited ${localStorage.getItem("time").slice(0, 10)}`)
+			if (localStorage.getItem("time").slice(0, 10) != today.slice(0, 10)) {
+				localStorage.clear();
+				console.log("Clearing storage")
+			}
+		}
+		
+		// parse through Google Sheets data
 		var sheetData = data.feed.entry;
 		var i;
 		for (i = 0; i < sheetData.length; i++) {
@@ -11,74 +24,50 @@ $.getJSON(
 			let major = data.feed.entry[i]['gsx$major']['$t'];
 			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'];
 			let socials = data.feed.entry[i]['gsx$othersocials']['$t'];
+			let photoURL;
+
 			if (insta) {
-				//console.log(insta)
-				//console.log('https://www.instagram.com/' + insta + '/?__a=1')
-				$.get('https://www.instagram.com/' + insta + '/?__a=1&')
+				// check if insta URL is in local storage
+				if (localStorage.getItem(insta)) {
+					photoURL = localStorage.getItem(insta)
+					document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials);
+					console.log(`Found ${photoURL} for @${insta}`)
+				} else {
+					// getting instagram page info
+					$.get('https://www.instagram.com/' + insta + '/?__a=1&')
 					.done(function (data) {
-						//console.log(data)
 						try {
 							let photoURL = data['graphql']['user']['profile_pic_url_hd'];
-							console.log(photoURL);
-							document.getElementById('contactInfo').innerHTML += format(
-								name,
-								insta,
-								photoURL,
-								phone,
-								year,
-								major,
-								fact,
-								socials
-							);
+							// found photoURL
+							document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials);
+							localStorage.setItem(insta, photoURL)
+							console.log(`Saving ${photoURL} for @${insta}`)
 						} catch {
-							document.getElementById('contactInfo').innerHTML += format(
-								name,
-								insta,
-								false,
-								phone,
-								year,
-								major,
-								fact,
-								socials
-							);
+							// no photoURL found
+							document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
+							console.log(`Could not get instagram picture for @${insta}`)
 						}
 					})
 					.fail(function () {
-						console.log('FAILED');
-						document.getElementById('contactInfo').innerHTML += format(
-							name,
-							insta,
-							false,
-							phone,
-							year,
-							major,
-							fact,
-							socials
-						);
+						console.log(`Could not find insta page for @${insta}`);
+						// couldn't find insta
+						document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
 					});
+				}
 			} else {
-				console.log('no pic');
-				document.getElementById('contactInfo').innerHTML += format(
-					name,
-					false,
-					false,
-					phone,
-					year,
-					major,
-					fact,
-					socials
-				);
+				console.log(`No insta given for ${name}`);
+				// no insta given
+				document.getElementById('contactInfo').innerHTML += format(name, false, false, phone, year, major, fact, socials);
 			}
 		}
+		localStorage.setItem("time", new Date())
+		console.log(localStorage)
 	}
 );
 
 function format(name, insta, photoURL, phone, year, major, fact, socials) {
 	let output;
 	let photo;
-	console.log(photoURL);
-
-	//photoURL= "https://phihenrynguyen.com/assets/headshot.jpg"
 
 	if (socials) {
 		socials = `<li>Other Socials: ${socials} </li>`;
@@ -88,6 +77,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 
 	if (insta) {
 		if (photoURL) {
+			// insta photo found
 			photo =
 				`<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">` +
 				`<img class="card-img-top thumbnail hoverable img-fluid" src=${photoURL} + ></img>` +
@@ -116,6 +106,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 				</div>
 			</div>`
 		} else {
+			// no insta photo found
 			output = 
 			`<div class="col-6 col-md-4 col-lg-3">
 				<div class="card hoverable my-2">
@@ -136,6 +127,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 			</div>`
 		}
 	} else {
+		// no insta given
 		output = `<div class="col-6 col-md-4 col-lg-3">
 			<div class="card hoverable my-2">
 				<div class="card-body p-1">
@@ -153,74 +145,3 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 	}
 	return output;
 }
-
-/* TABLE
-$.getJSON(
-	'https://spreadsheets.google.com/feeds/list/164sYoGTskq6Z8_oQGKHxt8Sk3cCUpp1BWATWdieOc-c/1/public/full?alt=json',
-	function (data) {
-		var sheetData = data.feed.entry;
-		var i;
-		for (i = 0; i < sheetData.length; i++) {
-			let name = data.feed.entry[i]['gsx$name']['$t'];
-			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'];
-            let phone = data.feed.entry[i]['gsx$phonenumber']['$t'];
-            let year = data.feed.entry[i]['gsx$class']['$t'];
-            let major = data.feed.entry[i]['gsx$major']['$t'];
-            let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'];
-            let socials = data.feed.entry[i]['gsx$othersocials']['$t'];
-			if (insta) {
-                //console.log(insta)
-                //console.log('https://www.instagram.com/' + insta + '/?__a=1')
-                $.get('https://www.instagram.com/' + insta + '/?__a=1&')
-					.done(function (data) {
-                        //console.log(data)
-                        try {
-                            let photoURL = data['graphql']['user']['profile_pic_url_hd'];
-                            console.log(photoURL);
-                            document.getElementById('demo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials);
-                        } catch {
-                            document.getElementById('demo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
-                        }
-					})
-					.fail(function () {
-						console.log('FAILED');
-						document.getElementById('demo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
-					});
-			} else {
-				console.log('no pic');
-				document.getElementById('demo').innerHTML += format(name, false, false, phone, year, major, fact, socials);
-			}
-		}
-	}
-);
-
-function format(name, insta, photoURL, phone, year, major, fact, socials) {
-	let output;
-	let photo;
-	console.log(photoURL)
-	if (insta) {
-		if (photoURL) {
-			photo = `<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">` +
-			`<img class="thumbnail hoverable" src=${photoURL} + ></img>` +
-		'</a>'
-		}
-		else {
-			photo = ""
-		}
-		output =
-			'<tr>' +
-			td(photo) +
-			td(name) + td(year) + td(major) + td(fact) + 
-			td(`<a href="https://www.instagram.com/${insta}"target="_blank" rel="noopener"> ` + '@' + insta + '</a>') +
-			td(phone) + td(socials) + 
-			'</tr>';
-	} else {
-		output = '<tr>' + td('') + td(name) + td(year) + td(major) + td(fact) + td('N/A') + td(phone) + td(socials) + '</tr>';
-	}
-	return output;
-}
-
-function td(item) {
-	return '<td style="font-size:14px; vertical-align:middle">' + item + '</td>';
-}
-*/
