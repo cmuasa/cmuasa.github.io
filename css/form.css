@@ -4,7 +4,6 @@
     border: solid 3px #9C0000;
     background: #f1f1f1;
     border-radius: 10px;
-    padding-bottom: 2rem;
 }
 
 .title {
@@ -18,9 +17,10 @@
     font-family: 'Amatic SC', cursive;
     font-size: 68px;
     font-weight: bold;
+    text-transform: none;
 }
 
-p, h6 {
+p{
     font-family: 'Architects Daughter', cursive;
 }
 
@@ -29,6 +29,9 @@ label, h4, h5, h6 {
     text-transform: none;
 }
 
+.redText {
+    color: #9C0000
+}
 
 footer {
     height: 100%;
@@ -37,6 +40,16 @@ footer {
 
 footer p {
     font-family: 'Quicksand', sans-serif;
+}
+
+.hoverable {
+    transition: .3s;
+}
+
+.hoverable:hover {
+    transition: .3s;
+    opacity: 0.8;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2) !important
 }
 
 @media(max-width: 650px) {
