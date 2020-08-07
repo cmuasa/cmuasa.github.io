@@ -7,8 +7,19 @@ $.getJSON(
 		if (localStorage.getItem('time')) {
 			console.log(`Last visited ${localStorage.getItem("time").slice(0, 10)}`)
 			if (localStorage.getItem("time").slice(0, 10) != today.slice(0, 10)) {
-				localStorage.clear();
-				console.log("Clearing storage")
+				$.get('https://www.instagram.com/phi.nguyenn/?__a=1')
+				.done(function (data) {
+					// try to access instagram
+					try {
+						let photoURL = data['graphql']['user']['profile_pic_url_hd'];
+						// able to access, and clearing storage
+						console.log("Clearing storage")
+						localStorage.clear();
+					} catch {
+						// could not acces, not clearing storage
+						console.log("Not clearing storage")
+					}
+				})
 			}
 		}
 		
@@ -33,7 +44,7 @@ $.getJSON(
 					console.log(`Found ${photoURL} for @${insta}`)
 				} else {
 					// getting instagram page info
-					$.get('https://www.instagram.com/' + insta + '/?__a=1&')
+					$.get('https://www.instagram.com/' + insta + '/?__a=1')
 					.done(function (data) {
 						try {
 							let photoURL = data['graphql']['user']['profile_pic_url_hd'];
