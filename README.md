@@ -5,6 +5,6 @@ Last updated 8/8/2020.
 Deployed Site: http://www.cmuasa.org/
 
 Orientation Pages:
-http://www.cmuasa.org/checkin
-http://www.cmuasa.org/contact
-http://www.cmuasa.org/bingo
+- http://www.cmuasa.org/checkin
+- http://www.cmuasa.org/contact
+- http://www.cmuasa.org/bingo
