@@ -2,21 +2,13 @@
 <html lang="en">
 
 <head>
-    <!--
-    <meta http-equiv="refresh" content="0; URL=https://docs.google.com/forms/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/viewform" />
-    
-        Google Forms Link: https://docs.google.com/forms/d/e/1FAIpQLSeEIgFm6zAtOJ8hxRceI3jHATz75dhGVYYVdZtLDu7fkRZuZg/viewform
-
-    -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="CMU Asian Students Association" />
     <meta name="author" content="" />
     <link rel="icon" href="/img/favicon.png" />
-    <!--
-    <meta http-equiv="refresh" content="30">
-    -->
+    
     <title>ASA Contact Info!</title>
 
     <!-- Open Graph Meta Tags -->
@@ -64,7 +56,15 @@
             font-family: 'Architects Daughter', cursive;
         }
 
+        .onMobile {
+                visibility: hidden;
+        }
 
+        @media(max-width: 650px) {
+            .onMobile {
+                visibility: visible;
+            }
+        }
     </style>
 </head>
 
@@ -77,37 +77,15 @@
                 <h6>Find some new friends!</h6>
                 <h6>Stick around for some fun <a href="bingo.html" target="_blank">bingo</a> and check out our <a
                         href="./" target="_blank">website</a> for more information!</h6>
-                <h6>(best viewed on desktop)</h6>
+                <h6 class="onMobile">(best viewed on desktop)</h6>
             </div>
         </div>
         <br>
-        <!-- Table  
-        <div class="mx-1 mx-sm-5 my-0 py-0" style="overflow-x: auto;">
-            <table class="bordered table-striped table table-hover" id="testTable">
-                <thead>
-                    <tr>
-                        <th style="width:auto"></th>
-                        <th>Name</th>
-                        <th>Year</th>
-                        <th>Major</th>
-                        <th>Fact</th>
-                        <th>Insta Handle</th>
-                        <th>Phone number</th>
-                        <th>Other Socials</th>
-                    </tr>
-                </thead>
-                <tbody id="demo" class="align-self-center">
-
-                </tbody>
-            </table>
-        </div>
-        -->
 
         <div class="container-fluid text-center px-sm-5">
             <div class="row" id="contactInfo">
             </div>
         </div>
-
 
         <footer>
             <hr width="80%" />
