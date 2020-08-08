@@ -36,7 +36,7 @@ $.getJSON(
 			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'];
 			let socials = data.feed.entry[i]['gsx$othersocials']['$t'];
 			let photoURL;
-
+			phone = `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6, 10)}`
 			if (insta) {
 				// check if insta URL is in local storage
 				if (localStorage.getItem(insta)) {

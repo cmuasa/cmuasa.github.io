@@ -39,7 +39,8 @@
             margin-top: 1rem;
         }
 
-        input, textarea {
+        input,
+        textarea {
             max-width: 80%;
             width: 20rem;
         }
@@ -48,6 +49,17 @@
             width: auto;
         }
 
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 
 </head>
@@ -95,13 +107,17 @@
             <br>
             <label>Class:<span class="redText">*</span> </label>
             <br>
-            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Freshman" name="Freshman" required /> Freshman</label>&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Freshman" name="Freshman"
+                    required /> Freshman</label>&nbsp
             &nbsp&nbsp
-            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Sophomore" name="Sophomore" /> Sophomore</label>&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Sophomore"
+                    name="Sophomore" /> Sophomore</label>&nbsp
             <br>
-            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Junior" name="Junior" /> Junior</label>&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Junior" name="Junior" />
+                Junior</label>&nbsp
             &nbsp&nbsp
-            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Senior" name="Senior" /> Senior</label>&nbsp
+            <label class="m-0"><input class="radio" name="entry.718733056" type="radio" value="Senior" name="Senior" />
+                Senior</label>&nbsp
             <br>
             <label>Major:<span class="redText">*</span> </label><br>
             <input name="entry.1231867167" type="text" required />
@@ -113,10 +129,10 @@
             <input name="entry.532209718" type="number" required />
             <br>
             <label>Instagram Handle: </label><br>
-            <input name="entry.1582317946" type="text" placeholder="don't include @"/>
+            <input name="entry.1582317946" type="text" placeholder="don't include @" />
             <br>
             <label>Other Social Handles: </label><br>
-            <input name="entry.782707836" type="text" maxlength="75"/>
+            <input name="entry.782707836" type="text" maxlength="75" />
             <br>
             <label>What are most excited about for the semester? </label>
             <br><textarea name="entry.642546034" type="text"></textarea>
