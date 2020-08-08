@@ -2,7 +2,7 @@ $.getJSON(
 	'https://spreadsheets.google.com/feeds/list/164sYoGTskq6Z8_oQGKHxt8Sk3cCUpp1BWATWdieOc-c/1/public/full?alt=json',
 	function (data) {
 		var localStorage = window.localStorage;
-		var today = (new Date() + "").toString();
+		var today = (new Date()).toString();
 		// clear local storage if not visited on the same day
 		if (localStorage.getItem('time')) {
 			console.log(`Last visited ${localStorage.getItem("time").slice(0, 10)}`)
