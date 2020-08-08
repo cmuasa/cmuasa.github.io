@@ -4,9 +4,9 @@ $.getJSON(
 		var localStorage = window.localStorage;
 		var today = (new Date()).toString();
 		// clear local storage if not visited on the same day
-		if (localStorage.getItem('time')) {
-			console.log(`Last visited ${localStorage.getItem("time").slice(0, 10)}`)
-			if (localStorage.getItem("time").slice(0, 10) != today.slice(0, 10)) {
+		if (localStorage.getItem('lastUpdated')) {
+			console.log(`Last visited ${localStorage.getItem("lastUpdated").slice(0, 10)}`)
+			if (localStorage.getItem("lastUpdated").slice(0, 10) != today.slice(0, 10)) {
 				console.log('Attempting to clear local storage...')
 				$.get('https://www.instagram.com/phi.nguyenn/?__a=1')
 				.done(function (data) {
@@ -16,12 +16,19 @@ $.getJSON(
 						// able to access, and clearing storage
 						console.log("local storage cleared")
 						localStorage.clear();
+						// after clearing, set lastUpdated
+						localStorage.setItem("lastUpdated", new Date())
 					} catch {
 						// could not acces, not clearing storage
-						console.log("local storage not cleared")
+						console.log("Could not clear local storage")
 					}
 				})
+			} else {
+				console.log("Don't need to clear!")
 			}
+		} else {
+			// set lastUpdated if user hasn't visited yet
+			localStorage.setItem("lastUpdated", new Date())
 		}
 		
 		// parse through Google Sheets data
@@ -71,7 +78,6 @@ $.getJSON(
 				document.getElementById('contactInfo').innerHTML += format(name, false, false, phone, year, major, fact, socials);
 			}
 		}
-		localStorage.setItem("time", new Date())
 		console.log(localStorage)
 	}
 );
