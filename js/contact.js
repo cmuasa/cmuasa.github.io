@@ -94,23 +94,23 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 				`<img class="card-img-top thumbnail hoverable img-fluid" src=${photoURL} + ></img>` +
 				'</a>';
 			output = 
-			`<div class="col-6 col-md-4 col-lg-3">
+			`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 				<div class="card hoverable my-2">
 					<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">
-						<h5 class="card-title m-0 my-3 mb-xl-1">${name}</h5>
+						<h5 class="card-title my-3 mb-1">${name}</h5>
 					</a>
-					<div class="row mx-lg-3">
-						<div class="col-xl-4 align-self-center mb-3">
+					<div class="mx-1">
+						<div class="align-self-center mb-3 m-auto">
 						${photo}
 						</div>
-						<div class="card-body col-xl-8 p-0">
-							<p class="card-text m-0">
-								<li class="fact">"${fact}" </li>
+						<div class="card-body p-1">
+							<p class="card-text">
+								<li class="fact mb-2">"${fact}" </li>
 								<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 								<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 								<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
 								<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
-									${socials}
+								${socials}
 							</p>
 						</div>
 					</div>
@@ -119,18 +119,18 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 		} else {
 			// no insta photo found
 			output = 
-			`<div class="col-6 col-md-4 col-lg-3">
+			`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 				<div class="card hoverable my-2">
 					<div class="card-body p-1">
 						<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">
-							<h5 class="card-title m-0 my-3 mb-xl-1">${name}</h5>
+							<h5 class="card-title my-3 mb-1">${name}</h5>
 						</a>
-						<p class="card-text m-0">
-							<li class="fact">"${fact}" </li>
-							<li><span class="font-weight-bold">Class:</span> ${year} </li>
-							<li><span class="font-weight-bold">Major:</span> ${major} </li>
-							<li><span class="font-weight-bold">Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
-							<li><span class="font-weight-bold">Phone:</span> ${phone} </li>
+						<p class="card-text">
+							<li class="fact mb-2">"${fact}" </li>
+							<li><span class="font-weight-bold"> Class:</span> ${year} </li>
+							<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+							<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
+							<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
 							${socials}
 						</p>
 					</div>
@@ -139,20 +139,21 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 		}
 	} else {
 		// no insta given
-		output = `<div class="col-6 col-md-4 col-lg-3">
+		output = 
+		`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 			<div class="card hoverable my-2">
 				<div class="card-body p-1">
-					<h5 class="card-title m-0 my-3 mb-xl-1">${name}</h5>
-				<p class="card-text m-0">
-					<li class="fact">"${fact}" </li>
-					<li><span class="font-weight-bold">Class:</span> ${year} </li>
-					<li><span class="font-weight-bold">Major:</span> ${major} </li>
-					<li><span class="font-weight-bold">Phone:</span> ${phone} </li>
-					${socials}
-				</p>
+					<h5 class="card-title my-3 mb-1">${name}</h5>
+					<p class="card-text">
+						<li class="fact mb-2">"${fact}" </li>
+						<li><span class="font-weight-bold"> Class:</span> ${year} </li>
+						<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+						<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
+						${socials}
+					</p>
+				</div>
 			</div>
-		</div>
-	</div>`;
+		</div>`
 	}
 	return output;
 }
