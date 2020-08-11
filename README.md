@@ -8,3 +8,5 @@ Orientation Pages:
 - http://www.cmuasa.org/checkin
 - http://www.cmuasa.org/contact
 - http://www.cmuasa.org/bingo
+
+Github Repo for Bingo: https://github.com/phi-h-nguyen/bingo
