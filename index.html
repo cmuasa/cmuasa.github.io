@@ -21,6 +21,12 @@
 	<!-- Bootstrap Core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
+	<!-- Parallax.js-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="vendor/parallax/parallax.min.js"></script>
+
 	<!-- Custom Fonts -->
 	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -43,6 +49,7 @@
 </head>
 
 <body id="page-top" class="index">
+
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand page-scroll" href="#page-top">cmu asa</a>
@@ -65,7 +72,7 @@
 	</nav>
 
 	<!-- Header -->
-	<header>
+	<header class="parallax-window masthead" data-parallax="scroll" data-image-src="img/fence.jpg">
 		<div class="container">
 			<div class="intro-text">
 				<div class="intro-lead-in">Carnegie Mellon University's</div>
@@ -381,6 +388,9 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class="text-center mt-3">
+			&copy 2020 CMU ASA
 		</div>
 	</footer>
 
