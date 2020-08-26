@@ -100,7 +100,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 				`<img class="card-img-top thumbnail hoverable img-fluid" src=${photoURL} + ></img>` +
 				'</a>';
 			output = 
-			`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
+			`<div class="contactCard col-6 col-md-4 col-lg-3 col-xl-2">
 				<div class="card hoverable my-2">
 					<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">
 						<h5 class="card-title my-3 mb-1">${name}</h5>
@@ -125,7 +125,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 		} else {
 			// no insta photo found
 			output = 
-			`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
+			`<div class="contactCard col-6 col-md-4 col-lg-3 col-xl-2">
 				<div class="card hoverable my-2">
 					<div class="card-body p-1">
 						<a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener">
@@ -146,7 +146,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 	} else {
 		// no insta given
 		output = 
-		`<div class="col-6 col-md-4 col-lg-3 col-xl-2">
+		`<div class="contactCard col-6 col-md-4 col-lg-3 col-xl-2">
 			<div class="card hoverable my-2">
 				<div class="card-body p-1">
 					<h5 class="card-title my-3 mb-1">${name}</h5>
@@ -162,4 +162,25 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 		</div>`
 	}
 	return output;
+}
+
+function search() {
+	// Declare variables
+	var input, filter, ul, cards, a, i, txtValue;
+	input = document.getElementById('searchInput');
+	filter = input.value.toLowerCase();
+	ul = document.getElementById("contactInfo");
+	cards = ul.getElementsByClassName('contactCard');
+	console.log(cards)
+
+	// Loop through all list items, and hide those who don't match the search query
+	for (i = 0; i < cards.length; i++) {
+		a = cards[i]
+		txtValue = a.textContent || a.innerText;
+		if (txtValue.toLowerCase().indexOf(filter) > -1) {
+			cards[i].style.display = "";
+		} else {
+			cards[i].style.display = "none";
+		}
+	}
 }
