@@ -36,7 +36,7 @@ $.getJSON(
 		var i;
 		for (i = 0; i < sheetData.length; i++) {
 			let name = data.feed.entry[i]['gsx$name']['$t'];
-			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'];
+			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase();
 			let phone = data.feed.entry[i]['gsx$phonenumber']['$t'];
 			let year = data.feed.entry[i]['gsx$class']['$t'];
 			let major = data.feed.entry[i]['gsx$major']['$t'];
