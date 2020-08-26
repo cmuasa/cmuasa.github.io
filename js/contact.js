@@ -171,7 +171,6 @@ function search() {
 	filter = input.value.toLowerCase();
 	ul = document.getElementById("contactInfo");
 	cards = ul.getElementsByClassName('contactCard');
-	console.log(cards)
 
 	// Loop through all list items, and hide those who don't match the search query
 	for (i = 0; i < cards.length; i++) {
