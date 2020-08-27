@@ -36,14 +36,14 @@ $.getJSON(
 		var i;
 		let people = new Set();
 		for (i = 0; i < sheetData.length; i++) {
-			let name = data.feed.entry[i]['gsx$name']['$t'];
-			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase();
-			let phone = data.feed.entry[i]['gsx$phonenumber']['$t'];
-			let year = data.feed.entry[i]['gsx$class']['$t'];
-			let major = data.feed.entry[i]['gsx$major']['$t'];
-			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'];
-			let socials = data.feed.entry[i]['gsx$othersocials']['$t'];
-			let where = data.feed.entry[i]['gsx$wherewillyoubeforthesemester']['$t'];
+			let name = data.feed.entry[i]['gsx$name']['$t'].trim();
+			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase().trim();
+			let phone = data.feed.entry[i]['gsx$phonenumber']['$t'].trim();
+			let year = data.feed.entry[i]['gsx$class']['$t'].trim();
+			let major = data.feed.entry[i]['gsx$major']['$t'].trim();
+			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'].trim();
+			let socials = data.feed.entry[i]['gsx$othersocials']['$t'].trim();
+			let where = data.feed.entry[i]['gsx$wherewillyoubeforthesemester']['$t'].trim();
 			let photoURL;
 			let key = JSON.stringify({name, insta, phone, year, major, fact, socials, where});
 			if (!people.has(key)) {
@@ -109,7 +109,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 		socials = '';
 	}
 	if (where) {
-		where = `<li class="font-weight-bold">In ${where} </li>`;
+		where = `<li><span class="font-weight-bold">Location</span>: ${where} </li>`;
 	} else {
 		where = '';
 	}
@@ -136,10 +136,10 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 								<li class="fact mb-2">"${fact}" </li>
 								<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 								<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+								${where}
 								<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
 								${phone}
 								${socials}
-								${where}
 							</p>
 						</div>
 					</div>
@@ -158,10 +158,10 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 							<li class="fact mb-2">"${fact}" </li>
 							<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 							<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+							${where}
 							<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
 							${phone}
 							${socials}
-							${where}
 						</p>
 					</div>
 				</div>
@@ -178,9 +178,9 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 						<li class="fact mb-2">"${fact}" </li>
 						<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 						<li><span class="font-weight-bold"> Major:</span> ${major} </li>
+						${where}
 						${phone}
 						${socials}
-						${where}
 					</p>
 				</div>
 			</div>
