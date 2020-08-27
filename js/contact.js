@@ -34,6 +34,7 @@ $.getJSON(
 		// parse through Google Sheets data
 		var sheetData = data.feed.entry;
 		var i;
+		let people = new Set();
 		for (i = 0; i < sheetData.length; i++) {
 			let name = data.feed.entry[i]['gsx$name']['$t'];
 			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase();
@@ -42,13 +43,24 @@ $.getJSON(
 			let major = data.feed.entry[i]['gsx$major']['$t'];
 			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'];
 			let socials = data.feed.entry[i]['gsx$othersocials']['$t'];
+			let where = data.feed.entry[i]['gsx$wherewillyoubeforthesemester']['$t'];
 			let photoURL;
-			phone = `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6, 10)}`
+			let key = JSON.stringify({name, insta, phone, year, major, fact, socials, where});
+			if (!people.has(key)) {
+				people.add(key)
+			} else {
+				console.log(`${name} repeated, skipping`)
+				continue;
+			}
+			//console.log(where)
+			if (phone) {
+				phone = `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6, 10)}`
+			}
 			if (insta) {
 				// check if insta URL is in local storage
 				if (localStorage.getItem(insta)) {
 					photoURL = localStorage.getItem(insta)
-					document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials);
+					document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials, where);
 					console.log(`Found ${photoURL} for @${insta}`)
 				} else {
 					// getting instagram page info
@@ -57,39 +69,49 @@ $.getJSON(
 						try {
 							let photoURL = data['graphql']['user']['profile_pic_url_hd'];
 							// found photoURL
-							document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials);
+							document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials, where);
 							localStorage.setItem(insta, photoURL)
 							console.log(`Saving ${photoURL} for @${insta}`)
 						} catch {
 							// no photoURL found
-							document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
+							document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials, where);
 							console.log(`Could not get instagram picture for @${insta}`)
 						}
 					})
 					.fail(function () {
 						console.log(`Could not find insta page for @${insta}`);
 						// couldn't find insta
-						document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials);
+						document.getElementById('contactInfo').innerHTML += format(name, insta, false, phone, year, major, fact, socials, where);
 					});
 				}
 			} else {
 				console.log(`No insta given for ${name}`);
 				// no insta given
-				document.getElementById('contactInfo').innerHTML += format(name, false, false, phone, year, major, fact, socials);
+				document.getElementById('contactInfo').innerHTML += format(name, false, false, phone, year, major, fact, socials, where);
 			}
 		}
 		console.log(localStorage)
 	}
 );
 
-function format(name, insta, photoURL, phone, year, major, fact, socials) {
+function format(name, insta, photoURL, phone, year, major, fact, socials, where) {
 	let output;
 	let photo;
 
+	if (phone) {
+		phone = `<li><span class="font-weight-bold">Phone</span>: ${phone} </li>`;
+	} else {
+		phone = '';
+	}
 	if (socials) {
 		socials = `<li><span class="font-weight-bold">Other Socials</span>: ${socials} </li>`;
 	} else {
 		socials = '';
+	}
+	if (where) {
+		where = `<li class="font-weight-bold">In ${where} </li>`;
+	} else {
+		where = '';
 	}
 
 	if (insta) {
@@ -115,8 +137,9 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 								<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 								<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 								<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
-								<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
+								${phone}
 								${socials}
+								${where}
 							</p>
 						</div>
 					</div>
@@ -136,8 +159,9 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 							<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 							<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 							<li><span class="font-weight-bold"> Insta:</span> <a href="https://www.instagram.com/${insta}" target="_blank" rel="noopener"> @${insta} </a> </li>
-							<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
+							${phone}
 							${socials}
+							${where}
 						</p>
 					</div>
 				</div>
@@ -154,8 +178,9 @@ function format(name, insta, photoURL, phone, year, major, fact, socials) {
 						<li class="fact mb-2">"${fact}" </li>
 						<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 						<li><span class="font-weight-bold"> Major:</span> ${major} </li>
-						<li><span class="font-weight-bold"> Phone:</span> ${phone} </li>
+						${phone}
 						${socials}
+						${where}
 					</p>
 				</div>
 			</div>
