@@ -52,7 +52,6 @@ $.getJSON(
 				console.log(`${name} repeated, skipping`)
 				continue;
 			}
-			//console.log(where)
 			if (phone) {
 				phone = `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6, 10)}`
 			}
@@ -61,7 +60,7 @@ $.getJSON(
 				if (localStorage.getItem(insta)) {
 					photoURL = localStorage.getItem(insta)
 					document.getElementById('contactInfo').innerHTML += format(name, insta, photoURL, phone, year, major, fact, socials, where);
-					console.log(`Found ${photoURL} for @${insta}`)
+					//console.log(`Found ${photoURL} for @${insta}`)
 				} else {
 					// getting instagram page info
 					$.get('https://www.instagram.com/' + insta + '/?__a=1')
@@ -90,7 +89,7 @@ $.getJSON(
 				document.getElementById('contactInfo').innerHTML += format(name, false, false, phone, year, major, fact, socials, where);
 			}
 		}
-		console.log(localStorage)
+		//console.log(localStorage)
 	}
 );
 
