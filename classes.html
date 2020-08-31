@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CMU Asian Students Association" />
+    <meta name="author" content="" />
+    <link rel="icon" href="/img/favicon.png" />
+
+    <title>ASA Classes Tracker!</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CMU Asian Students Association" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+        content="Carnegie Mellon University Asian Students Association, better known as CMU ASA, the largest cultural student organization on campus." />
+    <meta property="og:image" content="https://i.ibb.co/3WBPLnq/asa.jpg" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Theme CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+
+    <style>
+        .thumbnail {
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+        }
+
+        .card {
+            border-radius: 5%;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+
+        li {
+            list-style-type: none;
+            padding: 2px;
+            max-width: 100%;
+        }
+
+        .fact {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .onMobile {
+            visibility: hidden;
+        }
+
+        #searchInput {
+            width: 50%;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        @media(max-width: 650px) {
+            .onMobile {
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="">
+    <div class="form mx-sm-2 my-sm-3">
+        <div class="container text-center">
+            <div class="title">
+                <h1 class="asa"><a href="./">ASA</a>'s Classes Tracker Form!</h1>
+                <h6>Find some new study friends! (only courses with at least 2 people shown)</h6>
+                
+                <h6>Don't forget to join the <a href="https://www.facebook.com/groups/cmuasa2024" target="_blank" rel="noopener">ASA Class of 2024+ Facebook Page</a>!</h6>
+                <!--
+                <h6>Come to CMU Asian Students Association's Orientation Event this Saturday, August 29th from
+                    1:00-2:00pm EST for some fun <a href="bingo.html" target="_blank">bingo</a> and check out our <a
+                        href="./" target="_blank">website</a> for more information!
+                </h6>
+                -->
+                <h6>To change any of your information, contact Phi at 817-404-7116</h6>
+                <h6 class="onMobile">(best viewed on desktop)</h6>
+            </div>
+        </div>
+        <input type="text" id="searchInput" onkeyup="personSearch()" placeholder="Search">
+        <br>
+        <div class="container-fluid text-center px-sm-5">
+            <div class="row" id="contactInfo">
+            </div>
+        </div>
+
+        <footer>
+            <hr width="80%" />
+            <p>&copy 2020 CMU ASA</p>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/classes.js"></script>
+
+</body>
