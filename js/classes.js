@@ -27,6 +27,15 @@ $.getJSON(
             let person = {name: name, email: email, phone: phone, year: year, major: major, socials: socials, location: location};
 
             let courses = [course1,course2,course3,course4,course5,course6];
+            let key = JSON.stringify({name, email, phone, year, major, courses});
+
+			if (!set.has(key)) {
+				set.add(key)
+			} else {
+				console.log(`${name} repeated, skipping`)
+				continue;
+            }
+            
             for (j = 0; j < courses.length; j++) {
                 let course = courses[j];
                 if (course) {
@@ -38,13 +47,7 @@ $.getJSON(
                 }
             }
 
-			let key = JSON.stringify({name, email, phone, year, major, course1, course2, course3, course4, course5, course6});
-			if (!set.has(key)) {
-				set.add(key)
-			} else {
-				console.log(`${name} repeated, skipping`)
-				continue;
-			}
+
         }
         var keys = Object.keys(classes)
         for (const course of keys) {
