@@ -46,7 +46,6 @@ $.getJSON(
 				continue;
 			}
         }
-        console.log(classes)
         var keys = Object.keys(classes)
         for (const course of keys) {
             document.getElementById('contactInfo').innerHTML += format(course, classes[course])
@@ -75,7 +74,7 @@ function format(course, courseObject) {
                     <p class="card-text">
                         <li><span class="font-weight-bold"> Class:</span> ${courseObject[key]["year"]} </li>
                         <li><span class="font-weight-bold"> Major:</span> ${courseObject[key]["major"]} </li>
-                        <li><span class="font-weight-bold"> Phone Number:</span> ${courseObject[key]["phone"]} </li>
+                        <li><span class="font-weight-bold"> Phone:</span> ${courseObject[key]["phone"]} </li>
                         ${socials}
                         <li><span class="font-weight-bold"> Location:</span> ${courseObject[key]["location"]} </li>
                         <li><span class="font-weight-bold">Email:</span><a href="mailto:${courseObject[key]["email"]}" class="font-weight-bold"> </span> ${courseObject[key]["email"]} </a></li>
@@ -97,34 +96,29 @@ function format(course, courseObject) {
     $.ajax(settings).done(function (response) {
         courseName = response["name"]
         courseDesc = response["desc"]
-        console.log(response)
     });
-
 
     let output = `
     <div class="classRow container-fluid text-center px-sm-5 mb-5"> 
         <h4>${course.slice(0, 2)}-${course.slice(2, 5)}: ${courseName}</h4>
-        <h6 class="font-weight-normal mx-md-5">${courseDesc}</h6>
-        <div class="row"> 
+        <h6 class="description font-weight-normal mx-md-5">${courseDesc}</h6>
+        <div class="row justify-content-center"> 
             ${people}
         </div>
     </div>
     `
-
-
     return output
 }
 
-function personSearch() {
-	// Declare variables
+
+function courseSearch() {
 	var input, filter, ul, cards, a, i, txtValue;
-	input = document.getElementById('searchInput');
-    filter = input.value.toLowerCase();
+	input = document.getElementById('courseSearchInput');
+    filter = input.value.toLowerCase().trim();
 
         ul = document.getElementById("contactInfo");
-        cards = ul.getElementsByClassName('contactCard');
+        cards = ul.getElementsByClassName('classRow');
 
-        // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < cards.length; i++) {
             a = cards[i]
             txtValue = a.textContent || a.innerText;
@@ -134,5 +128,18 @@ function personSearch() {
                 cards[i].style.display = "none";
             }
         }
-    
+}
+
+function showDescription() {
+    var desc = document.getElementsByClassName('description')
+    for (i = 0; i < desc.length; i++) {
+        desc[i].style.display = ""
+    }
+}
+
+function hideDescription() {
+    var desc = document.getElementsByClassName('description')
+    for (i = 0; i < desc.length; i++) {
+        desc[i].style.display = "none"
+    }
 }

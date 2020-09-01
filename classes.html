@@ -60,7 +60,7 @@
             visibility: hidden;
         }
 
-        #searchInput {
+        #courseSearchInput {
             width: 50%;
             margin-bottom: 2rem;
             max-width: 500px;
@@ -94,7 +94,15 @@
                 <h6 class="onMobile">(best viewed on desktop)</h6>
             </div>
         </div>
-        <input type="text" id="searchInput" onkeyup="personSearch()" placeholder="Search">
+
+        <input type="text" id="courseSearchInput" onkeyup="courseSearch()" placeholder="Search for courses">
+        <br>
+        <label>Show Description:</label>
+        &nbsp&nbsp
+        <label class="m-0"><input class="radio" name="showDescription" onchange="showDescription()" type="radio" value="Yes" checked /> Yes</label>&nbsp
+        &nbsp
+        <label class="m-0"><input class="radio" name="showDescription" onchange="hideDescription()" type="radio" value="No"/> No</label>&nbsp
+        <br>
         <br>
         <div class="container-fluid text-center px-sm-5">
             <div class="row" id="contactInfo">
