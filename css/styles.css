@@ -770,6 +770,15 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     width: 30%;
 }
 
+.resource a {
+    color: #222222;
+    text-decoration: underline;
+}
+
+.resource a:hover {
+    color: #9c0000;
+}
+
 .descript {
     width: 70%;
 }
