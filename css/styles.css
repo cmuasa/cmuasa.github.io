@@ -602,3 +602,224 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
     background-color: #9C0000;
 }
+
+/****** ADVOCACY PAGE ******/
+
+#advo-header {
+    text-align: center;
+    padding: 100px 0px 0px;
+}
+
+#event-w {
+    padding: 75px 0px 0px;
+}
+
+@media (min-width: 768px) {
+    #advo-header {
+        padding: 150px 0px 0px;
+
+    }
+
+    #event-w {
+        padding: 100px 0px 0px;
+    }
+
+}
+
+#advo-header h1 {
+    font-size: 4em;
+}
+
+#event-w h2 {
+    margin-left: 0.5%;
+}
+
+.event {
+    background-color: #222222;
+    color: white;
+    border-radius: 5%;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+
+.event-left {
+    margin-left: 2%;
+    margin-right: 6%;
+}
+
+.event-right {
+    margin-left: 6%;
+    margin-right: 2%;
+}
+
+
+.event h4 {
+    color: #9c0000;
+    text-transform: none;
+}
+
+.event .presenter {
+    font-size: 1.2em;
+}
+
+.event .preview {
+    margin: 0 auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+.event .preview .preview-text {
+    text-align: left;
+    width: 48%;
+    float: left;
+}
+
+.event .preview .preview-img {
+    margin: 0 auto;
+    width: 48%;
+    float: right;
+}
+
+.event .preview .preview-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.links {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.links .btn {
+    border: none;
+    background-color: #9c0000;
+}
+
+/****** WORKSHOP PAGES ******/
+#banner {
+    padding: 100px 0px 0px;
+}
+
+#recap {
+    padding: 75px 0px 0px;
+}
+
+#resources {
+    padding: 75px 0px 0px;
+}
+
+@media (min-width: 768px) {
+    #banner {
+        padding: 150px 0px 0px;
+
+    }
+
+    #recap {
+        padding: 100px 0px 0px;
+    }
+
+    #resources {
+        padding: 75px 0px 0px;
+    }
+}
+
+#banner h1 {
+    font-size: 3em;
+}
+
+#banner h6 {
+    text-transform: none;
+}
+
+#banner .date {
+    font-weight: normal;
+}
+
+#banner .presenter {
+    width: 20%;
+    overflow: hidden;
+}
+
+#banner .presenter .presenter-left {
+    width: 35%;
+    float: left;
+}
+
+#banner .presenter .presenter-img {
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+}
+
+#banner .presenter .presenter-right {
+    width: 65%;
+    float: right;
+}
+
+.wrap {
+    float: right;
+    margin: 10px;
+}
+
+.workshop-cont {
+    margin-top: 2%;
+}
+
+.resource {
+    width: 30%;
+}
+
+.descript {
+    width: 70%;
+}
+
+th, td {
+    padding: 15px;
+}
+
+
+.table-head {
+    background-color: #9c0000;
+    color: white;
+}
+
+.odd {
+    background-color: #D49191;
+}
+
+.even {
+    background-color: #B84848;
+}
+
+/***** BLACK FOOTER *****/
+
+.black {
+    background-color: #222222;
+    color: white;
+    margin-top: 7.5%;
+}
+
+ul.social-buttons li a {
+    background-color: white;
+    color: #222222;
+}
+
+
+
+/*
+.two-col {
+    width: 100%;
+    overflow: hidden;
+}
+
+.two-col .left-col {
+    width: 35%;
+    float: left;
+    padding: 0px 0px 10px 0px;
+}
+
+.two-col .right-col {
+    width: 65%;
+    float: right;
+}*.
