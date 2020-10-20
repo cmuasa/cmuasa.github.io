@@ -614,20 +614,22 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     padding: 75px 0px 0px;
 }
 
+#advo-header h1 {
+    font-size: 2.8em;
+}
+
 @media (min-width: 768px) {
     #advo-header {
         padding: 150px 0px 0px;
+    }
 
+    #advo-header h1 {
+        font-size: 4em;
     }
 
     #event-w {
         padding: 100px 0px 0px;
     }
-
-}
-
-#advo-header h1 {
-    font-size: 4em;
 }
 
 #event-w h2 {
@@ -663,27 +665,51 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     font-size: 1.2em;
 }
 
-.event .preview {
+.event .previewDesktop {
     margin: 0 auto;
     width: 80%;
     overflow: hidden;
 }
 
-.event .preview .preview-text {
+.event .previewDesktop .preview-text {
     text-align: left;
     width: 48%;
     float: left;
 }
 
-.event .preview .preview-img {
+.event .previewDesktop .preview-img {
     margin: 0 auto;
     width: 48%;
     float: right;
 }
 
-.event .preview .preview-img img {
+.event .previewDesktop .preview-img img {
     width: 100%;
     height: 100%;
+}
+
+.event .previewMobile {
+    display: none;
+}
+
+.event .previewMobile img {
+    width: 40%;
+    height: 40%;
+}
+
+.event .previewMobile p {
+    margin-left: 10px;
+    text-align: left;
+}
+
+@media (max-width: 991px) {
+    .event .previewDesktop {
+        display: none;
+    }
+
+    .event .previewMobile {
+        display: block;
+    }
 }
 
 .links {
