@@ -614,20 +614,40 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     padding: 75px 0px 0px;
 }
 
+#advo-header h1 {
+    font-size: 4em;
+}
+
 @media (min-width: 768px) {
     #advo-header {
         padding: 150px 0px 0px;
+    }
 
+    #advo-header h1 {
+        font-size: 4em;
     }
 
     #event-w {
         padding: 100px 0px 0px;
     }
-
 }
 
-#advo-header h1 {
-    font-size: 4em;
+@media (max-width: 768px) {
+    #advo-header h1 {
+        font-size: 2.8em;
+    }
+}
+
+@media (max-width: 412px) {
+    #advo-header h1 {
+        font-size: 2.35em;
+    }
+}
+
+@media (max-width: 351px) {
+    #advo-header h1 {
+        font-size: 2.11em;
+    }
 }
 
 #event-w h2 {
@@ -663,27 +683,72 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     font-size: 1.2em;
 }
 
-.event .preview {
+.event .previewDesktop {
     margin: 0 auto;
     width: 80%;
     overflow: hidden;
 }
 
-.event .preview .preview-text {
+.event .previewDesktop .preview-text {
     text-align: left;
     width: 48%;
     float: left;
 }
 
-.event .preview .preview-img {
+.event .previewDesktop .preview-img {
     margin: 0 auto;
     width: 48%;
     float: right;
 }
 
-.event .preview .preview-img img {
+.event .previewDesktop .preview-img img {
     width: 100%;
     height: 100%;
+}
+
+.event .previewMobile {
+    display: none;
+}
+
+.event .previewMobile img {
+    width: 40%;
+    height: 40%;
+}
+
+.event .previewMobile p {
+    margin-left: 10px;
+    text-align: left;
+}
+
+@media (max-width: 991px) {
+    .event .previewDesktop {
+        display: none;
+    }
+
+    .event .previewMobile {
+        display: block;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .event-left {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .event-right {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .event {
+        margin-bottom: 1.8vh;
+    }
 }
 
 .links {
@@ -694,6 +759,13 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 .links .btn {
     border: none;
     background-color: #9c0000;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .links {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 /****** WORKSHOP PAGES ******/
@@ -757,13 +829,55 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     float: right;
 }
 
+@media (max-width: 768px) {
+    #banner .presenter {
+        width: 30%;
+    }
+}
+
+@media (max-width: 425px) {
+    #banner .presenter {
+        width: 50%;
+    }
+}
+
+@media (max-width: 375px) {
+    #banner .presenter {
+        width: 55%;
+    }
+}
+
+@media (max-width: 320px) {
+    #banner .presenter {
+        width: 70%;
+    }
+}
+
 .wrap {
     float: right;
     margin: 10px;
 }
 
+@media (max-width: 767px) {
+
+    .wrap {
+        float: none;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 566px) {
+    iframe {
+        width: 100%;
+    }
+}
+
 .workshop-cont {
     margin-top: 2%;
+}
+
+table {
+    width: 100%;
 }
 
 .resource {
