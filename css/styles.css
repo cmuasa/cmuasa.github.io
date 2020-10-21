@@ -829,6 +829,17 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
     float: right;
 }
 
+@media (max-width: 991px) {
+    #banner .presenter {
+        width: 25%;
+    }
+
+    #banner .presenter .presenter-img {
+        width: 75%;
+        height: 75%;
+    }
+}
+
 @media (max-width: 768px) {
     #banner .presenter {
         width: 30%;
