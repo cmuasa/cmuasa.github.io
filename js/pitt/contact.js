@@ -37,7 +37,7 @@ $.getJSON(
 		let people = new Set();
 		for (i = 0; i < sheetData.length; i++) {
 			let name = data.feed.entry[i]['gsx$name']['$t'].trim();
-			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase().trim();
+			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase().trim().replace('@', "");
 			let phone = data.feed.entry[i]['gsx$phonenumber']['$t'].trim();
       let school = data.feed.entry[i]['gsx$school']['$t'].trim();
 			let year = data.feed.entry[i]['gsx$class']['$t'].trim();
