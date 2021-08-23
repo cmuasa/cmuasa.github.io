@@ -1,5 +1,5 @@
 $.getJSON(
-	'https://spreadsheets.google.com/feeds/list/164sYoGTskq6Z8_oQGKHxt8Sk3cCUpp1BWATWdieOc-c/1/public/full?alt=json',
+	'https://spreadsheets.google.com/feeds/cells/2PACX-1vTbCIGAIC8iq6nRbZZA2IlI4y2nFVtnHtmF1WL2k1cldYMTwbpGIXPCvyS8naclKQvZxw7oh71_NfcT/1/public/values?alt=json',
 	function (data) {
 		var localStorage = window.localStorage;
 		var today = (new Date()).toString();
