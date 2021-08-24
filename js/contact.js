@@ -37,15 +37,16 @@ $.get(
 		let people = new Set();
 		for (i = 1; i < data.length; i++) {
 			let row = data[i].split("\t");
+			console.log(row)
 
 			let name = row[1].trim();
-			let insta = row[7].toLowerCase().trim();
-			let phone = row[6].trim();
+			let insta = row[8].toLowerCase().trim();
+			let phone = row[7].trim();
 			let year = row[3].trim();
 			let major = row[4].trim();
 			let fact = row[5].trim();
-			let socials = row[8].trim();
-			let where = row[9].trim();
+			let socials = row[9].trim();
+			let where = row[6].trim();
 			let photoURL;
 			let key = JSON.stringify({name, insta, phone, year});
 			if (!people.has(key)) {
