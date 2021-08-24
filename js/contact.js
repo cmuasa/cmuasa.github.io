@@ -115,6 +115,11 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 	} else {
 		where = '';
 	}
+	if (fact) {
+		fact = `<li class="fact mb-2">"${fact}" </li>`;
+	} else {
+		fact = '';
+	}
 
 	if (insta) {
 		if (photoURL) {
@@ -135,7 +140,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 						</div>
 						<div class="card-body p-1">
 							<p class="card-text">
-								<li class="fact mb-2">"${fact}" </li>
+								${fact}
 								<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 								<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 								${where}
@@ -157,7 +162,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 							<h5 class="card-title my-3 mb-1">${name}</h5>
 						</a>
 						<p class="card-text">
-							<li class="fact mb-2">"${fact}" </li>
+							${fact}
 							<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 							<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 							${where}
@@ -177,7 +182,7 @@ function format(name, insta, photoURL, phone, year, major, fact, socials, where)
 				<div class="card-body p-1">
 					<h5 class="card-title my-3 mb-1">${name}</h5>
 					<p class="card-text">
-						<li class="fact mb-2">"${fact}" </li>
+						${fact}
 						<li><span class="font-weight-bold"> Class:</span> ${year} </li>
 						<li><span class="font-weight-bold"> Major:</span> ${major} </li>
 						${where}
