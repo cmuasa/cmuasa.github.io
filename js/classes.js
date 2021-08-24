@@ -1,5 +1,5 @@
 $.get(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRSg0pDcZiu9N65LezHh2GLu91LU6i9purafQBriPfT6s2TSa7Xgla7SlRkE6BZRz43FiGqNTrPfVf2/pub?gid=2069243529&single=true&output=csv",
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRSg0pDcZiu9N65LezHh2GLu91LU6i9purafQBriPfT6s2TSa7Xgla7SlRkE6BZRz43FiGqNTrPfVf2/pub?gid=2069243529&single=true&output=tsv",
   function (data) {
     data = data.split("\r\n");
 
@@ -7,8 +7,8 @@ $.get(
     var i;
     let set = new Set();
     var classes = new Object();
-    for (i = 0; i < data.length - 1; i++) {
-      let row = data[i].split(",");
+    for (i = 1; i < data.length - 1; i++) {
+      let row = data[i].split("\t");
 
       let name = row[1].trim();
       let email = row[2].trim();

@@ -1,6 +1,7 @@
-$.getJSON(
-	'https://spreadsheets.google.com/feeds/cells/2PACX-1vTbCIGAIC8iq6nRbZZA2IlI4y2nFVtnHtmF1WL2k1cldYMTwbpGIXPCvyS8naclKQvZxw7oh71_NfcT/1/public/values?alt=json',
+$.get(
+	'https://docs.google.com/spreadsheets/d/e/2PACX-1vTgBvOrP7YFoKMjFr8HdMZbN--xlrQodsbeVsya3MfDxvXK9dDYrzFb8OGHqrzRgYw8jH30m051AGXw/pub?gid=203246274&single=true&output=tsv',
 	function (data) {
+		data = data.split("\r\n")
 		var localStorage = window.localStorage;
 		var today = (new Date()).toString();
 		// clear local storage if not visited on the same day
@@ -32,20 +33,21 @@ $.getJSON(
 		}
 		
 		// parse through Google Sheets data
-		var sheetData = data.feed.entry;
 		var i;
 		let people = new Set();
-		for (i = 0; i < sheetData.length; i++) {
-			let name = data.feed.entry[i]['gsx$name']['$t'].trim();
-			let insta = data.feed.entry[i]['gsx$instagramhandle']['$t'].toLowerCase().trim();
-			let phone = data.feed.entry[i]['gsx$phonenumber']['$t'].trim();
-			let year = data.feed.entry[i]['gsx$class']['$t'].trim();
-			let major = data.feed.entry[i]['gsx$major']['$t'].trim();
-			let fact = data.feed.entry[i]['gsx$funfactaboutyourself']['$t'].trim();
-			let socials = data.feed.entry[i]['gsx$othersocials']['$t'].trim();
-			let where = data.feed.entry[i]['gsx$wherewillyoubeforthesemester']['$t'].trim();
+		for (i = 1; i < data.length; i++) {
+			let row = data[i].split("\t");
+
+			let name = row[1].trim();
+			let insta = row[7].toLowerCase().trim();
+			let phone = row[6].trim();
+			let year = row[3].trim();
+			let major = row[4].trim();
+			let fact = row[5].trim();
+			let socials = row[8].trim();
+			let where = row[9].trim();
 			let photoURL;
-			let key = JSON.stringify({name, insta, phone, year, major, fact, socials, where});
+			let key = JSON.stringify({name, insta, phone, year});
 			if (!people.has(key)) {
 				people.add(key)
 			} else {
